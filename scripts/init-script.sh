@@ -1,0 +1,1 @@
+/opt/mssql-tools/bin/sqlcmd -S mssqlserver -U sa -P Pass@word -d master -i /tmp/01-medical-clinic-system.sql

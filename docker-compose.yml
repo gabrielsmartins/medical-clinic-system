@@ -1,0 +1,17 @@
+services:
+  mssqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: mssqlserver
+    environment:
+      SA_PASSWORD: "Pass@word"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+  mssqltools:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - mssqlserver
+    volumes:
+      - .scripts/01-medical-clinic-system.sql.sql:/tmp/01-medical-clinic-system.sql.sql
+      - ./init-database.sh:/tmp/init-database.sh
+    command: /bin/bash ./tmp/init-database.sh

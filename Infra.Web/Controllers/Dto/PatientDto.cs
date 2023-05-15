@@ -1,7 +1,6 @@
-﻿using Domain.Enums;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace domain
+namespace Infra.Web.Dto
 {
     public class PatientDto
     {
@@ -22,7 +21,7 @@ namespace domain
         public Char Gender { get; set; }
 
         [JsonPropertyName("medication_allergy")]
-        public Boolean? MedicationAllergy {  get; set; }
+        public Boolean? MedicationAllergy { get; set; }
 
         [JsonPropertyName("medication_allergy_description")]
         public string MedicationAllergyDescription { get; set; }

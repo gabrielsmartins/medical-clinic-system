@@ -1,15 +1,9 @@
-﻿using domain;
+﻿using Domain;
 using Domain.Repository;
-using Persistence.Context;
-using Persistence.Entity;
-using Persistence.Mapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infra.Persistence.Context;
+using Infra.Persistence.Mapper;
 
-namespace Persistence.Repository
+namespace Infra.Persistence.Repository
 {
     public class PatientSQLServerRepository : PatientRepository
     {

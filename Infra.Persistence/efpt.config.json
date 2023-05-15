@@ -9,7 +9,7 @@
    "OutputContextPath": null,
    "OutputPath": "Entity",
    "PreserveCasingWithRegex": true,
-   "ProjectRootNamespace": "Persistence",
+   "ProjectRootNamespace": "Infra.Persistence",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,

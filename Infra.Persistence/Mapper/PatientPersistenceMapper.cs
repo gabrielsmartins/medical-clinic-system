@@ -1,18 +1,13 @@
 ﻿
-using domain;
+using Domain;
 using Domain.Enums;
-using Persistence.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infra.Persistence.Entity;
 
-namespace Persistence.Mapper
+namespace Infra.Persistence.Mapper
 {
-    internal static class PatientPersistenceMapper
+    public static class PatientPersistenceMapper
     {
-        internal static PatientEntity ToEntity(this Patient patient)
+        public static PatientEntity ToEntity(this Patient patient)
         {
             if (patient == null)
             {
@@ -24,7 +19,7 @@ namespace Persistence.Mapper
             patientEntity.Name = patient.Name;
             patientEntity.MotherName = patient.MotherName;
             patientEntity.DateOfBirth = patient.DateOfBirth;
-            patientEntity.Gender = (Char) patient.Gender;
+            patientEntity.Gender = (Char)patient.Gender;
             patientEntity.MedicationAllergy = patientEntity.MedicationAllergy;
             patientEntity.MedicationAllergyDescription = patient.MedicationAllergyDescription;
             patientEntity.CreatedAt = patient.CreatedAt;
@@ -32,7 +27,7 @@ namespace Persistence.Mapper
             return patientEntity;
         }
 
-        internal static void Apply(this Patient patient, PatientEntity patientEntity)
+        public static void Apply(this Patient patient, PatientEntity patientEntity)
         {
             if (patient == null)
             {

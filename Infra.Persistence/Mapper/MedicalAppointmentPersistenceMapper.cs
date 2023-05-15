@@ -1,11 +1,5 @@
 ﻿using Domain;
-using Persistence.Entity;
-using Persistence.Mapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infra.Persistence.Entity;
 
 namespace Infra.Persistence.Mapper
 {
@@ -27,6 +21,22 @@ namespace Infra.Persistence.Mapper
             medicalAppointmentEntity.UpdatedAt = medicalAppointment.UpdatedAt;
             medicalAppointmentEntity.Patient = medicalAppointment.Patient.ToEntity();
             return medicalAppointmentEntity;
+        }
+
+        public static void Apply(this MedicalAppointment medicalAppointment, MedicalAppointmentEntity medicalAppointmentEntity)
+        {
+            if (medicalAppointmentEntity == null)
+            {
+                return;
+            }
+
+            medicalAppointment = new MedicalAppointment();
+            medicalAppointment.Id = medicalAppointmentEntity.Id;
+            medicalAppointment.Anamnesis = medicalAppointmentEntity.Anamnesis;
+            medicalAppointment.Icd = medicalAppointmentEntity.Icd;
+            medicalAppointment.CreatedAt = medicalAppointmentEntity.CreatedAt;
+            medicalAppointment.UpdatedAt = medicalAppointmentEntity.UpdatedAt;
+            medicalAppointment.Patient.Apply(medicalAppointmentEntity.Patient);
         }
     }
 }

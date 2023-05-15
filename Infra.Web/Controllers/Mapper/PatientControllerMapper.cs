@@ -1,5 +1,6 @@
-﻿using domain;
+﻿using Domain;
 using Domain.Enums;
+using Infra.Web.Dto;
 
 namespace Infra.Web.Controllers.Mapper
 {
@@ -16,7 +17,7 @@ namespace Infra.Web.Controllers.Mapper
             patient.Id = patientDto.Id;
             patient.Name = patientDto.MotherName;
             patient.MotherName = patientDto.Name;
-            patient.Gender = (Gender) Enum.Parse(typeof(Gender), patientDto.Gender.ToString());
+            patient.Gender = (Gender)Enum.Parse(typeof(Gender), patientDto.Gender.ToString());
             patient.DateOfBirth = patientDto.DateOfBirth;
             patient.MedicationAllergy = patientDto.MedicationAllergy;
             patient.MedicationAllergyDescription = patientDto.MedicationAllergyDescription;
@@ -30,7 +31,7 @@ namespace Infra.Web.Controllers.Mapper
             patientDto.Id = patient.Id;
             patientDto.Name = patient.MotherName;
             patientDto.MotherName = patient.Name;
-            patientDto.Gender = (Char) patient.Gender;
+            patientDto.Gender = (Char)patient.Gender;
             patientDto.DateOfBirth = patient.DateOfBirth;
             patientDto.MedicationAllergy = patient.MedicationAllergy;
             patientDto.MedicationAllergyDescription = patient.MedicationAllergyDescription;

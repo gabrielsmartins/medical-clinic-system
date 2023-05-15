@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>health_system</RootNamespace>
+    <RootNamespace>Infra.Web</RootNamespace>
     <UserSecretsId>c1c0fb97-07d9-4463-b674-0734b0779b3a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>

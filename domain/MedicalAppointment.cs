@@ -10,11 +10,11 @@ namespace Domain
     public class MedicalAppointment
     {
         public int Id { get; set; }
-        private Patient Patient { get; set; }
-        private string Anamnesis { get; set; }
-        private string? Icd { get; set; }
-        private DateTime CreatedAt { get; set; }
-        private DateTime UpdatedAt { get; set; }
+        public Patient Patient { get; set; }
+        public string Anamnesis { get; set; }
+        public string? Icd { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
     }
 }

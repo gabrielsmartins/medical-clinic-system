@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "health-system", "health-system\health-system.csproj", "{E6F453B0-06B2-4C5C-8598-C014D39B1CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Web", "health-system\Infra.Web.csproj", "{E6F453B0-06B2-4C5C-8598-C014D39B1CBA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B} = {94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "domain\Domain.csproj", "{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "persistence\Persistence.csproj", "{FF4F2422-2F03-4D90-924E-A5F00FF56876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Persistence", "persistence\Infra.Persistence.csproj", "{FF4F2422-2F03-4D90-924E-A5F00FF56876}"
 	ProjectSection(ProjectDependencies) = postProject
 		{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B} = {94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}
 	EndProjectSection

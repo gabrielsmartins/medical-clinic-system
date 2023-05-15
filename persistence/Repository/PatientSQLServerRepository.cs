@@ -23,7 +23,7 @@ namespace Persistence.Repository
         public Patient Create(Patient patient)
         {
             var patientEntity = patient.ToEntity();
-            this._context.Add(patientEntity);
+            this._context.Patients.Add(patientEntity);
             this._context.SaveChanges();
             patient.Id = patientEntity.Id;
             return patient;

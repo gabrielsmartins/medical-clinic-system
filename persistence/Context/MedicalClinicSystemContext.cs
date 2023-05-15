@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Entity;
 
 namespace Persistence.Context;
 
@@ -12,14 +13,13 @@ public partial class MedicalClinicSystemContext : DbContext
     {
     }
 
-    public MedicalClinicSystemContext(DbContextOptions<MedicalClinicSystemContext> options)
-        : base(options)
+    public MedicalClinicSystemContext(DbContextOptions<MedicalClinicSystemContext> options) : base(options)
     {
     }
 
-    public virtual DbSet<MedicalAppointment> MedicalAppointments { get; set; }
+    public virtual DbSet<MedicalAppointmentEntity> MedicalAppointments { get; set; }
 
-    public virtual DbSet<Patient> Patients { get; set; }
+    public virtual DbSet<PatientEntity> Patients { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -27,14 +27,15 @@ public partial class MedicalClinicSystemContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<MedicalAppointment>(entity =>
+        modelBuilder.Entity<MedicalAppointmentEntity>(entity =>
         {
-            entity.HasOne(d => d.Patient).WithMany(p => p.MedicalAppointment)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Medical_Appointment_Patient");
+            entity.HasOne(d => d.Patient)
+                  .WithMany(p => p.Appointments)
+                  .OnDelete(DeleteBehavior.ClientSetNull)
+                  .HasConstraintName("FK_Medical_Appointment_Patient");
         });
 
-        modelBuilder.Entity<Patient>(entity =>
+        modelBuilder.Entity<PatientEntity>(entity =>
         {
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Gender).IsFixedLength();

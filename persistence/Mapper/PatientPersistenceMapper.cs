@@ -1,5 +1,6 @@
 ﻿
 using domain;
+using Domain.Enums;
 using Persistence.Entity;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace Persistence.Mapper
             patient.Name = patientEntity.Name;
             patient.MotherName = patientEntity.MotherName;
             patient.DateOfBirth = patientEntity.DateOfBirth;
-            patient.Gender = patientEntity.Gender;
+            patient.Gender = (Gender)Enum.Parse(typeof(Gender), patientEntity.Gender.ToString());
             patient.MedicationAllergy = patientEntity.MedicationAllergy;
             patient.MedicationAllergyDescription = patientEntity.MedicationAllergyDescription;
             patient.CreatedAt = patientEntity.CreatedAt;

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Persistence.Entity;
 
-[Table("Medical_Appointment")]
+[Table("Medical_Appointments")]
 public partial class MedicalAppointmentEntity
 {
     [Key]
@@ -34,6 +34,6 @@ public partial class MedicalAppointmentEntity
     public DateTime UpdatedAt { get; set; }
 
     [ForeignKey("PatientId")]
-    [InverseProperty("MedicalAppointment")]
+    [InverseProperty("Appointments")]
     public virtual PatientEntity Patient { get; set; }
 }

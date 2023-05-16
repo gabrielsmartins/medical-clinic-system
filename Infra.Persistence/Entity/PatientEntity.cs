@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Persistence.Entity;
 
+[Table("Patients")]
 public partial class PatientEntity
 {
     [Key]

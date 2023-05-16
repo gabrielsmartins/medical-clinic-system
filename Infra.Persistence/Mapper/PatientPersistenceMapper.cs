@@ -19,7 +19,7 @@ namespace Infra.Persistence.Mapper
             patientEntity.Name = patient.Name;
             patientEntity.MotherName = patient.MotherName;
             patientEntity.DateOfBirth = patient.DateOfBirth;
-            patientEntity.Gender = (Char)patient.Gender;
+            patientEntity.Gender = (Char) patient.Gender;
             patientEntity.MedicationAllergy = patientEntity.MedicationAllergy;
             patientEntity.MedicationAllergyDescription = patient.MedicationAllergyDescription;
             patientEntity.CreatedAt = patient.CreatedAt;
@@ -38,7 +38,7 @@ namespace Infra.Persistence.Mapper
             patient.Name = patientEntity.Name;
             patient.MotherName = patientEntity.MotherName;
             patient.DateOfBirth = patientEntity.DateOfBirth;
-            patient.Gender = (Gender)Enum.Parse(typeof(Gender), patientEntity.Gender.ToString());
+            patient.Gender = (Gender) Enum.ToObject(typeof(Gender), patientEntity.Gender);
             patient.MedicationAllergy = patientEntity.MedicationAllergy;
             patient.MedicationAllergyDescription = patientEntity.MedicationAllergyDescription;
             patient.CreatedAt = patientEntity.CreatedAt;

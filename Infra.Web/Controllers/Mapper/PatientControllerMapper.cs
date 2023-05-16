@@ -15,9 +15,9 @@ namespace Infra.Web.Controllers.Mapper
 
             var patient = new Patient();
             patient.Id = patientDto.Id;
-            patient.Name = patientDto.MotherName;
-            patient.MotherName = patientDto.Name;
-            patient.Gender = (Gender)Enum.Parse(typeof(Gender), patientDto.Gender.ToString());
+            patient.Name = patientDto.Name;
+            patient.MotherName = patientDto.MotherName;
+            patient.Gender = (Gender) Enum.ToObject(typeof(Gender), patientDto.Gender);
             patient.DateOfBirth = patientDto.DateOfBirth;
             patient.MedicationAllergy = patientDto.MedicationAllergy;
             patient.MedicationAllergyDescription = patientDto.MedicationAllergyDescription;
@@ -29,9 +29,9 @@ namespace Infra.Web.Controllers.Mapper
         public static void Apply(this PatientDto patientDto, Patient patient)
         {
             patientDto.Id = patient.Id;
-            patientDto.Name = patient.MotherName;
-            patientDto.MotherName = patient.Name;
-            patientDto.Gender = (Char)patient.Gender;
+            patientDto.Name = patient.Name;
+            patientDto.MotherName = patient.MotherName;
+            patientDto.Gender = (Char) patient.Gender;
             patientDto.DateOfBirth = patient.DateOfBirth;
             patientDto.MedicationAllergy = patient.MedicationAllergy;
             patientDto.MedicationAllergyDescription = patient.MedicationAllergyDescription;

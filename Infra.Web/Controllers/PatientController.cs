@@ -26,8 +26,7 @@ namespace Infra.Web.Controllers
         {
             var patient = patientDto.ToDomain();
             var createdPatient = this._service.Create(patient);
-            var uri = new Uri(Url.Link("api/v1/patients", new { id = createdPatient.Id }));
-            return Created(uri, createdPatient);
+            return Created("api/vi/patients/" + createdPatient.Id, createdPatient);
         }
     }
 }

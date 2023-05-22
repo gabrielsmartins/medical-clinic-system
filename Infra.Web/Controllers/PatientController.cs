@@ -2,6 +2,7 @@ using Domain.Service;
 using Infra.Web.Controllers.Mapper;
 using Infra.Web.Dto;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Net;
 
 namespace Infra.Web.Controllers

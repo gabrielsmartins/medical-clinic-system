@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33627.172
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Web", "Infra.Web\Infra.Web.csproj", "{E6F453B0-06B2-4C5C-8598-C014D39B1CBA}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -11,6 +11,17 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "domain\Domain.csproj", "{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Persistence", "Infra.Persistence\Infra.Persistence.csproj", "{FF4F2422-2F03-4D90-924E-A5F00FF56876}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B} = {94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F80A8F13-5289-4871-9076-DC3F35290374}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTest", "Domain.UnitTest\Domain.UnitTest.csproj", "{90E05565-7998-46D5-9023-234EC4D28755}"
 	ProjectSection(ProjectDependencies) = postProject
 		{94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B} = {94C5F17C-D99B-438C-A8CE-FB6DE6ACD46B}
 	EndProjectSection
@@ -33,6 +44,10 @@ Global
 		{FF4F2422-2F03-4D90-924E-A5F00FF56876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4F2422-2F03-4D90-924E-A5F00FF56876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4F2422-2F03-4D90-924E-A5F00FF56876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E05565-7998-46D5-9023-234EC4D28755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E05565-7998-46D5-9023-234EC4D28755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E05565-7998-46D5-9023-234EC4D28755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E05565-7998-46D5-9023-234EC4D28755}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

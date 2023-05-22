@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Domain.Enums;
 using Infra.Web.Dto;
+using System;
 
 namespace Infra.Web.Controllers.Mapper
 {

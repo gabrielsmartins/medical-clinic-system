@@ -1,12 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Infra.Web.Dto
 {
     public class PatientDto
     {
         [JsonPropertyName("id")]
-
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -15,7 +15,7 @@ namespace Infra.Web.Dto
         public string MotherName { get; set; }
 
         [JsonPropertyName("date_of_birth")]
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [JsonPropertyName("gender")]
         public Char Gender { get; set; }

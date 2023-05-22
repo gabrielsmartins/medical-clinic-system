@@ -2,6 +2,7 @@
 using Domain;
 using Domain.Enums;
 using Infra.Persistence.Entity;
+using System;
 
 namespace Infra.Persistence.Mapper
 {
@@ -20,7 +21,7 @@ namespace Infra.Persistence.Mapper
             patientEntity.MotherName = patient.MotherName;
             patientEntity.DateOfBirth = patient.DateOfBirth;
             patientEntity.Gender = (Char) patient.Gender;
-            patientEntity.MedicationAllergy = patientEntity.MedicationAllergy;
+            patientEntity.MedicationAllergy = patient.MedicationAllergy;
             patientEntity.MedicationAllergyDescription = patient.MedicationAllergyDescription;
             patientEntity.CreatedAt = patient.CreatedAt;
             patientEntity.UpdatedAt = patient.UpdatedAt;
